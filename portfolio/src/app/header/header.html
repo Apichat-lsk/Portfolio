@@ -1,0 +1,33 @@
+<div class="w-full bg-[#282C33] px-4 py-2">
+    <div class="max-w-[1024px] mx-auto flex items-center justify-between h-[61px]">
+        <div class="flex items-center gap-2">
+            <img class="w-4 h-4" src="assets/images/Logo.png" alt="">
+            <p class="text-base font-bold text-white">Elias</p>
+        </div>
+        <ul class="hidden md:flex gap-6 list-none pl-0">
+            <li class="text-base text-white font-medium cursor-pointer" (click)="goDirect('')"><span class="text-[#C778DD]">#</span>home</li>
+            <li class="text-base text-white font-medium cursor-pointer" (click)="goDirect('project')"><span class="text-[#C778DD]">#</span>work</li>
+            <li class="text-base text-white font-medium cursor-pointer" (click)="goDirect('about-me')"><span class="text-[#C778DD]">#</span>about-me</li>
+            <li class="text-base text-white font-medium cursor-pointer" (click)="goDirect('contacts')"><span class="text-[#C778DD]">#</span>contacts</li>
+        </ul>
+        <button class="md:hidden text-white text-2xl" (click)="toggleMobileMenu()">
+            ☰
+        </button>
+    </div>
+    <div class="flex flex-col md:hidden overflow-hidden transition-all duration-300 ease-in-out" [class.max-h-0]="!mobileMenuOpen" [class.max-h-60]="mobileMenuOpen"
+        [class.opacity-100]="mobileMenuOpen" [class.opacity-0]="!mobileMenuOpen" [class.scale-100]="mobileMenuOpen" [class.scale-95]="!mobileMenuOpen">
+        <ul class="flex flex-col gap-8 text-white py-2">
+            <li (click)="goDirect('')"><span class="text-[#C778DD]">#</span>home</li>
+            <li (click)="goDirect('project')"><span class="text-[#C778DD]">#</span>work</li>
+            <li (click)="goDirect('about-me')"><span class="text-[#C778DD]">#</span>about-me</li>
+            <li (click)="goDirect('contacts')"><span class="text-[#C778DD]">#</span>contacts</li>
+        </ul>
+        <div class="flex justify-center">
+            <div class="grid grid-cols-3 gap-3">
+                <div class="w-8 h-8 md:w-8 md:h-8 bg-[url('/assets/images/Github.png')] bg-contain bg-no-repeat bg-center"></div>
+                <div class="w-8 h-8 md:w-8 md:h-8 bg-[url('/assets/images/Dribble.png')] bg-contain bg-no-repeat bg-center"></div>
+                <div class="w-8 h-8 md:w-8 md:h-8 bg-[url('/assets/images/Figma.png')] bg-contain bg-no-repeat bg-center"></div>
+            </div>
+        </div>
+    </div>
+</div>

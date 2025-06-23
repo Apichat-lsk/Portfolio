@@ -1,28 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-
-const plugin = require("tailwindcss/plugin");
-
-export default {
-  content: ["index.html"],
-  theme: {
-    extend: {},
-  },
-  plugins: [
-    require("@tailwindcss/typography"),
-    plugin(
-      function ({ addVariant }) {
-        addVariant("glow", ".glow-capture .glow-overlay &");
-      },
-      {
-        theme: {
-          extend: {
-            colors: {
-              // https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
-              glow: "color-mix(in srgb, var(--glow-color) calc(<alpha-value> * 100%), transparent)",
-            },
-          },
-        },
-      }
-    ),
+module.exports = {
+  content: [
+    "./src/**/*.{html,ts}", // สำคัญมาก สำหรับ Angular ต้องรวมทั้ง .html และ .ts
   ],
+  theme: {
+    extend: {
+      colors: {
+        background: "#282C33",
+        glow: "#C778DD",
+        secondary: "#ABB2BF",
+      },
+      translate: {
+        "10/12": "83.333333%",
+      },
+    },
+  },
+  plugins: [],
 };

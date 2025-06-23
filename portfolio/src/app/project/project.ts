@@ -9,4 +9,8 @@ import { Footer } from '../footer/footer';
   templateUrl: './project.html',
   styleUrl: './project.css',
 })
-export class Project {}
+export class Project {
+  openInternalPage(path: any) {
+    window.open(path, '_blank');
+  }
+}
